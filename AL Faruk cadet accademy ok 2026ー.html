@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al-Faruk Cadet Academy School & Madrasah</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: "Noto Sans Bengali", "Noto Sans", Arial, sans-serif;
+      margin: 0;
+      background: url('school-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.9);
+      z-index: -1;
+    }
+
+    header {
+      background: linear-gradient(90deg, #003366, #0066cc);
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      background: #002b66;
+      text-align: center;
+      padding: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 18px;
+      font-weight: 600;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #ffdd57;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    section {
+      display: none;
+      padding: 45px 20px;
+      text-align: center;
+      margin: 25px auto;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      width: 85%;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    section.active { display: block; }
+
+    section h2 { color: #003366; font-size: 26px; margin-bottom: 12px; }
+
+    /* Teacher Cards */
+    .teacher-card {
+      display: inline-block;
+      background: #f0f8ff;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+    .teacher-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    /* Admission Form */
+    #admission form {
+      display: inline-block;
+      text-align: left;
+      width: 100%;
+      max-width: 500px;
+      background: #f4f9ff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    #admission input, #admission select, #admission textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      font-size: 16px;
+    }
+    #admission button {
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #admission button:hover {
+      background: #004c99;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #002b66;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 30px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media screen and (max-width: 600px) {
+      section { width: 95%; padding: 25px 10px; }
+      nav a { display: block; margin: 8px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Al-Faruk Cadet Academy School & Madrasah</h1>
+    <h2>আল-ফারুক ক্যাডেট একাডেমি স্কুল অ্যান্ড মাদরাসা</h2>
+  </header>
+
+  <nav>
+    <a onclick="showSection('home')">🏠 হোম</a>
+    <a onclick="showSection('syllabus')">📚 সিলেবাস</a>
+    <a onclick="showSection('teacher')">👨‍🏫 শিক্ষক</a>
+    <a onclick="showSection('admission')">📝 ভর্তি</a>
+    <a onclick="showSection('notice')">📢 নোটিশ</a>
+    <a onclick="showSection('contact')">📞 যোগাযোগ</a>
+    <a onclick="showSection('about')">ℹ️ সম্পর্কে</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="active">
+    <h2>স্বাগতম / Welcome</h2>
+    <p><b>Al-Faruk Cadet Academy</b> আধুনিক ও ধর্মীয় শিক্ষার সমন্বয়ে গঠিত একটি মানসম্মত প্রতিষ্ঠান।</p>
+  </section>
+
+  <section id="syllabus">
+    <h2>📖 সিলেবাস</h2>
+    <ul>
+      <li>বাংলা</li>
+      <li>অঙ্ক</li>
+      <li>ইংরেজি</li>
+      <li>আরবি</li>
+      <li>তথ্যপ্রযুক্তি</li>
+    </ul>
+  </section>
+
+  <section id="teacher">
+    <h2>👨‍🏫 শিক্ষকবৃন্দ</h2>
+    <div class="teacher-card">
+      <img src="teacher1.jpg" alt="Teacher">
+      <h3>মোঃ রাহিম</h3>
+      <p>বাংলা শিক্ষক</p>
+    </div>
+    <div class="teacher-card">
+      <img src="teacher2.jpg" alt="Teacher">
+      <h3>সালমা বেগম</h3>
+      <p>ইংরেজি শিক্ষক</p>
+    </div>
+  </section>
+
+  <section id="admission">
+    <h2>📝 ভর্তি ফর্ম</h2>
+    <form>
+      <label>নাম:</label>
+      <input type="text" required>
+      <label>পিতার নাম:</label>
+      <input type="text" required>
+      <label>শ্রেণি:</label>
+      <select required>
+        <option>নির্বাচন করুন</option>
+        <option>Play</option>
+        <option>Nursery</option>
+        <option>One (১ম)</option>
+      </select>
+      <label>মোবাইল নম্বর:</label>
+      <input type="tel" required>
+      <button type="submit">জমা দিন</button>
+    </form>
+  </section>
+
+  <section id="notice">
+    <h2>📢 নোটিশ</h2>
+    <ul>
+      <li>২০২৫ সালের ভর্তি শুরু হবে ১ জানুয়ারি থেকে।</li>
+      <li>নতুন সেমিস্টারের সময়সূচি প্রকাশিত হয়েছে।</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>📞 যোগাযোগ</h2>
+    <p>📞 01346-935001</p>
+    <p>✉️ alfarukcadetacademy2023@gmail.com</p>
+  </section>
+
+  <section id="about">
+    <h2>ℹ️ সম্পর্কে</h2>
+    <p>আল-ফারুক ক্যাডেট একাডেমি শিক্ষার্থীদের নৈতিক, মানসিক ও শিক্ষাগত বিকাশে সহায়তা করে।</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Al-Faruk Cadet Academy School & Madrasah
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</body>
+</html>
